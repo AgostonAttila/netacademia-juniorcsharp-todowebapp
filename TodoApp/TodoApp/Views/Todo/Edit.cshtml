@@ -1,0 +1,21 @@
+﻿@model TodoApp.Models.TodoItem
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "Todo", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.Id)
+
+    @Html.EditorFor(x => x.Name)
+    @Html.EditorFor(x => x.Done)
+
+    @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+
+    <input type="submit" value="Mentés" />
+}
+
+@Html.ActionLink("Back to List", "Index")
